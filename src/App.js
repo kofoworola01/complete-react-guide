@@ -24,7 +24,6 @@ const App = () => {
 
   const [expense, setExpense] = useState(DummyExpenses)
 
-
   const AppStyle = {
     backgroundColor: '#2a2a2a',
     padding: 20,

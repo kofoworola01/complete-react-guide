@@ -6,22 +6,16 @@ const ExpenseFilter = (props) => {
   const [filterYear, setFilterYear] = useState('2019')
 
   const handleChange = (e) => {
-    // console.log(e.target.value, 'hhhh')
-    const { name, value } = e.target
-    setFilterYear((preState) => ({
-      ...preState,
-      [name]:  value
-    }))
-    props.filterdValue(e.target.value, 'hhhh')
+    const { value } = e.target
+    setFilterYear(value)
+    props.filterdValue(value)
   }
-
-  console.log(filterYear, 'lllll')
 
   return (
     <div className='expenses-filter'>
       <div className='expenses-filter__control'>
         <label>Filter by year</label>
-        <select onChange={handleChange} value={filterYear} name='filter'>
+        <select onChange={handleChange} value={filterYear}>
           <option value='2022'>2022</option>
           <option value='2021'>2021</option>
           <option value='2020'>2020</option>
