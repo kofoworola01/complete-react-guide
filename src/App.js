@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+// import ExpenseItem from './components/ExpenseItem'
+import NewExpense from './components/NewExpense/NewExpense'
+import Expenses from './components/Expenses'
+// import ExpenseFilter from './components/ExpenseFilter/expensefilter'
 
-function App() {
+const DummyExpenses = [
+  {
+    id: 1,
+    title: 'Car Insurance',
+    amount: 520.99,
+    date: new Date(2019, 2, 28)
+  },
+  {
+    id: 2,
+    title: 'Car Payment',
+    amount: 599.99,
+    date: new Date(2016, 9, 18)
+  }
+]
+
+
+const App = () => {
+
+  const [expense, setExpense] = useState(DummyExpenses)
+
+
+  const AppStyle = {
+    backgroundColor: '#2a2a2a',
+    padding: 20,
+    margin: '50px auto',
+    width: '65%',
+    borderRadius: '10px'
+  }
+
+  const handleAddExpense = (expenses) => {
+    setExpense((prevExpense) => {
+      return [expenses, ...prevExpense]
+    })
+  }
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={AppStyle}>
+
+      <NewExpense onAddExpense={handleAddExpense} />
+      {/* <ExpenseFilter filterdValue={handleFilteredValue} /> */}
+      <Expenses 
+        item={expense} 
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
