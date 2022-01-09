@@ -45,7 +45,6 @@ const App = () => {
 
   return (
     <div style={AppStyle}>
-
       <NewExpense onAddExpense={handleAddExpense} />
       <Expenses 
         item={expense} 
