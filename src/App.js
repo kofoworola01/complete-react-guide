@@ -13,7 +13,13 @@ const DummyExpenses = [
     id: 2,
     title: 'Car Payment',
     amount: 599.99,
-    date: new Date(2016, 9, 18)
+    date: new Date(2020, 9, 18)
+  },
+  {
+    id: 2,
+    title: 'Book Payment',
+    amount: 599.99,
+    date: new Date(2019, 9, 18)
   }
 ]
 
