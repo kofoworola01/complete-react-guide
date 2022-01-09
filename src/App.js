@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-// import ExpenseItem from './components/ExpenseItem'
 import NewExpense from './components/NewExpense/NewExpense'
 import Expenses from './components/Expenses'
-// import ExpenseFilter from './components/ExpenseFilter/expensefilter'
 
 const DummyExpenses = [
   {
@@ -43,7 +41,6 @@ const App = () => {
     <div style={AppStyle}>
 
       <NewExpense onAddExpense={handleAddExpense} />
-      {/* <ExpenseFilter filterdValue={handleFilteredValue} /> */}
       <Expenses 
         item={expense} 
       />

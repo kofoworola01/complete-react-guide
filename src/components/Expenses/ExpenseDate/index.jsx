@@ -9,8 +9,6 @@ const ExpenseDate = (props) => {
   const day = d.toLocaleString('en-US', { day: '2-digit' });
   const year = d.getFullYear();
 
-  console.log(d, 'dddddd')
-
   return (
     <div className='expense-date'>
       <div className='expense-date__month'>{month}</div>
